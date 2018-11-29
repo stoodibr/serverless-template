@@ -4,7 +4,7 @@ service: serverless-boilerplate
 
 provider:
   name: aws
-  runtime: python3.7
+  runtime: python3.6
 
 functions:
   hello:
