@@ -1,0 +1,16 @@
+# asdf
+.tool-versions
+
+# macOS
+.DS_Store
+
+# python
+.env
+__pycache__
+*.pyc
+
+# serverless
+.serverless
+
+# Visual Studio Code
+.vscode
