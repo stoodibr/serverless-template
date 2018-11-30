@@ -3,7 +3,7 @@ import json
 
 def handler(event, context):
     body = {
-        'message': 'Go Serverless',
+        'message': 'Go Serverless!',
     }
 
     if event:
