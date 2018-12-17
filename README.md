@@ -4,7 +4,7 @@
 
 ```
 serverless create \
-    --template-url https://github.com/serverless/serverless/tree/master/lib/plugins/create/templates/aws-python3
+    --template-url https://gitlab.com/dipnlik/serverless-boilerplate/tree/master
     --path my-new-project
 ```
 
