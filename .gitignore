@@ -15,5 +15,9 @@ __pycache__
 # serverless
 .serverless
 
+# temporary files
+/tmp/*
+!/tmp/.keep
+
 # Visual Studio Code
 .vscode
