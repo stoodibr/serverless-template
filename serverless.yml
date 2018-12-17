@@ -1,4 +1,4 @@
-frameworkVersion: ">=1.34.0 <2.0.0"
+frameworkVersion: '>=1.34.0 <2.0.0'
 
 service: serverless-boilerplate
 
@@ -17,3 +17,11 @@ package:
     - .env/**
     - '**/__pycache__/**'
     - .vscode/**
+
+# plugins:
+  # https://serverless.com/blog/serverless-api-gateway-domain/
+  # - serverless-domain-manager
+  # https://github.com/sbstjn/serverless-dynamodb-autoscaling
+  # - serverless-dynamodb-autoscaling
+  # https://serverless.com/blog/serverless-python-packaging/
+  # - serverless-python-requirements
