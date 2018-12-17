@@ -11,3 +11,9 @@ functions:
     handler: functions/hello/main.handler
     events:
       - http: GET hello
+
+package:
+  exclude:
+    - .env/**
+    - '**/__pycache__/**'
+    - .vscode/**
