@@ -15,6 +15,7 @@ functions:
 package:
   exclude:
     - .env/**
+    - node_modules/**
     - '**/__pycache__/**'
     - .vscode/**
 
