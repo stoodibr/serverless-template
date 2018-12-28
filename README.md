@@ -4,7 +4,7 @@
 
 ```
 serverless create \
-    --template-url https://gitlab.com/dipnlik/serverless-boilerplate/tree/master
+    --template-url https://gitlab.com/dipnlik/serverless-boilerplate/tree/master \
     --path my-new-project
 ```
 
