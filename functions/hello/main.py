@@ -1,20 +1,22 @@
-import json
+import elasticapm
+
+from utils.response import response
 
 
 def handler(event, context):
+    return response(index, event, context, __name__)
+
+
+@elasticapm.capture_span()
+def index(event, context):
     body = {
-        'message': 'Go Serverless!',
+        'message': 'Go Serverless!'
     }
 
     if event:
         body['data'] = event
 
-    response = {
-        'statusCode': 200,
-        'body': json.dumps(body)
-    }
-
-    return response
+    return body
 
 
 if __name__ == "__main__":
