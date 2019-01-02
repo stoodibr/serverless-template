@@ -5,6 +5,9 @@ service: serverless-boilerplate
 provider:
   name: aws
   runtime: python3.7
+  environment:
+    ELASTIC_APM_SERVICE_NAME: ${self:service}-${opt:stage, self:provider.stage}
+    ELASTIC_APM_SERVER_URL: ${self:custom.stages.${opt:stage, self:provider.stage}.elastic_apm_server_url}
 
 functions:
   hello:
@@ -19,10 +22,15 @@ package:
     - '**/__pycache__/**'
     - .vscode/**
 
-# plugins:
+plugins:
   # https://serverless.com/blog/serverless-api-gateway-domain/
   # - serverless-domain-manager
   # https://github.com/sbstjn/serverless-dynamodb-autoscaling
   # - serverless-dynamodb-autoscaling
   # https://serverless.com/blog/serverless-python-packaging/
-  # - serverless-python-requirements
+  - serverless-python-requirements
+
+custom:
+  stages:
+    dev:
+      elastic_apm_server_url: http://apm-server.stdev.xyz
