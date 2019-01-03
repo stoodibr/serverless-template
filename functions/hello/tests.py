@@ -1,13 +1,9 @@
-import json
 import unittest
 
-from .main import handler
+from .main import index
 
 
 class HelloTest(unittest.TestCase):
-    def test_handler(self):
-        response = handler({}, {})
-        self.assertEqual(response['statusCode'], 200)
-
-        body = json.loads(response['body'])
+    def test_index(self):
+        body = index({}, {})
         self.assertEqual(body['message'], 'Go Serverless!')
