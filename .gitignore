@@ -9,7 +9,6 @@ node_modules
 
 # python
 *.egg-info
-.env
 __pycache__
 *.pyc
 
