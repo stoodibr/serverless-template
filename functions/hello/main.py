@@ -17,10 +17,3 @@ def index(event, context):
         body['data'] = event
 
     return body
-
-
-if __name__ == "__main__":
-    # TODO: how to pass along cli arguments?
-    #   sls invoke uses --data and --context
-    #   python main uses ... ?
-    handler({}, {})
