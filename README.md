@@ -10,8 +10,6 @@ serverless create \
 
 ## TODO
 
-- Desligar plugins por stage
-- Dockerizar?
 - Opção de CLI para retorno em texto or JSON?
 - CircleCI CLI? <https://circleci.com/docs/2.0/local-cli/>
 

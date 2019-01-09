@@ -7,7 +7,7 @@ provider:
   runtime: python3.7
   environment:
     ELASTIC_APM_SERVICE_NAME: ${self:service}-${opt:stage, self:provider.stage}
-    ELASTIC_APM_SERVER_URL: ${self:custom.stages.${opt:stage, self:provider.stage}.elastic_apm_server_url}
+    ELASTIC_APM_SERVER_URL: ${self:custom.stages.${opt:stage, self:provider.stage}.elasticAPMServerUrl}
 
 functions:
   hello:
@@ -24,13 +24,20 @@ package:
 
 plugins:
   # https://serverless.com/blog/serverless-api-gateway-domain/
-  # - serverless-domain-manager
+  - serverless-domain-manager
   # https://github.com/sbstjn/serverless-dynamodb-autoscaling
   # - serverless-dynamodb-autoscaling
   # https://serverless.com/blog/serverless-python-packaging/
   - serverless-python-requirements
 
 custom:
+  customDomain:
+    enabled: ${self:custom.stages.${opt:stage, self:provider.stage}.domainManagerEnabled, 'true'}
+    domainName: ${env:SLS_DOMAIN_NAME, '${self:service}-${opt:stage, self:provider.stage}.stdev.xyz'}
+    basePath: ''
+    stage: ${opt:stage, self:provider.stage}
+    createRoute53Record: true
   stages:
     dev:
-      elastic_apm_server_url: http://apm-server.stdev.xyz
+      domainManagerEnabled: false
+      elasticAPMServerUrl: http://apm-server.stdev.xyz
