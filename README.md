@@ -3,9 +3,11 @@
 ## Uso
 
 ```
-serverless create \
+$ serverless create \
     --template-url https://bitbucket.org/stoodiDev/serverless-template/src/master/ \
     --path my-new-project
+
+$ npm install
 ```
 
 ## TODO
